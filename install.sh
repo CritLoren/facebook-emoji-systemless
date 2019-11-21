@@ -123,7 +123,7 @@ REPLACE="
 
 print_modname() {
   ui_print "*******************************"
-  ui_print "            Twemoji            "
+  ui_print "      Facebook Emoji 4.0       "
   ui_print "*******************************"
 }
 
@@ -139,7 +139,7 @@ on_install() {
   FONTFILES=$(sed -ne '/<family lang="und-Zsye".*>/,/<\/family>/ {s/.*<font weight="400" style="normal">\(.*\)<\/font>.*/\1/p;}' $MIRRORPATH$FONTS)
   for font in $FONTFILES
   do
-    ln -s /system/fonts/NotoColorEmoji.ttf $MODPATH/system/fonts/$font
+    cp -f $MODPATH/system/fonts/NotoColorEmoji.ttf $MODPATH/system/fonts/$font
   done
 }
 
